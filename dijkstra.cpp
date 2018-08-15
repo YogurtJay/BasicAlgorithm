@@ -1,7 +1,9 @@
+//
+// Created by ly on 2018/8/15.
+//
 #include <iostream>
 #include <algorithm>
 
-//set(CMAKE_CXX_STANDARD 14)
 using namespace std;
 
 class Dijkstra{
@@ -42,13 +44,13 @@ public:
             nextNodeToJoin = -1;
             pathDistance = shortestPath;
             shortestPath = 10000;
-            
+
             //更新距离
             for (int k = 0; k < m; ++k) {
-              if(std::find(path, path+m, k)==path+m && array[path[i+1]][k]!=-1){
-                  if(array[startPoint][k]==-1 || pathDistance + array[path[i+1]][k] < array[startPoint][k])
-                  array[startPoint][k] = pathDistance + array[path[i+1]][k];
-              }
+                if(std::find(path, path+m, k)==path+m && array[path[i+1]][k]!=-1){
+                    if(array[startPoint][k]==-1 || pathDistance + array[path[i+1]][k] < array[startPoint][k])
+                        array[startPoint][k] = pathDistance + array[path[i+1]][k];
+                }
             }
         }
 
